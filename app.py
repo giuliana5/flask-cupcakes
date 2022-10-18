@@ -20,3 +20,12 @@ def list_cupcakes():
     cupcakes = [cupcake.serialize() for cupcake in Cupcake.query.order_by(Cupcake.rating).all()]
 
     return jsonify(cupcakes=cupcakes)
+
+@app.route("/api/cupcakes/<int:id>")
+def get_cupcake(id):
+    """Retrieve cupcake info."""
+
+    cupcake = Cupcake.query.get_or_404(id)
+
+    return jsonify(cupcake=cupcake.serialize())
+    
