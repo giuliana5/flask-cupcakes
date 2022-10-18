@@ -2,7 +2,6 @@
 from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
-DEFAULT_IMG = "https://tinyurl.com/demo-cupcake"
 
 def connect_db(app):
     """Connect to the db."""
@@ -24,7 +23,14 @@ class Cupcake(db.Model):
     rating = db.Column(db.Float, nullable=False)
     image = db.Column(db.Text, nullable=False)
 
-    def default_img(self):
-        """Displays default img if no img was entered."""
+    def serialize(self):
+        """Serialize to jsonify."""
 
-        return self.image or DEFAULT_IMG
+        return {
+            'id': self.id,
+            'flavor': self.flavor,
+            'size': self.size,
+            'rating': self.rating,
+            'image': self.image
+        }
+
