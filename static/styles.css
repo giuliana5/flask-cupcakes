@@ -1,0 +1,76 @@
+body {
+    background-color: #51d0de;
+    color: #bf4aa8;
+    margin: 1em;
+}
+
+h1 {
+    margin: 1em;
+}
+
+h2 {
+    text-align: center;
+}
+
+#cupcakes {
+    display: flex;
+    margin: 1em;
+}
+
+#add-cupcake-form {
+    border: 2px solid #d9d9d9;
+    margin: 1em;
+    padding: 1em;
+    width: 25%;
+}
+
+label {
+    display: inline-block;
+    text-align: left;
+    width: 50%;
+}
+
+input,
+select,
+button {
+    margin: 5px;
+    background-color: #d9d9d9;
+}
+
+button {
+    background-color: #d9d9d9;
+    color: #bf4aa8;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #bf4aa8;
+    color: #d9d9d9;
+}
+
+.cupcake {
+    margin: 1em;
+    position: relative;
+}
+
+.flavors {
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.delete {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #d9d9d9;
+    border: none;
+    color: red;
+}
+
+.delete:hover {
+    background-color: red;
+    color: #d9d9d9;
+}
