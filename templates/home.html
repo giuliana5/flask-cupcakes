@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+<h1>Cupcakes</h1>
+
+<div id="cupcakes"></div>
+
+<form id="add-cupcake-form">
+    <h2>Add Cupcake</h2>
+    <div>
+        <label for="flavor">Cupcake Flavor</label>
+        <input type="text" id="flavor" name="flavor" required/>
+    </div>
+    <div>
+        <label for="image">Image URL</label>
+        <input type="url" id="image" name="image"/>
+    </div>        
+    <div>
+        <label for="size">Size</label>
+        <select id="size" required>
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+        </select>
+    </div>
+    <div>
+        <label for="rating">Rating</label>
+        <select id="rating" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+    </div>
+    <button>Add</button>
+</form>
+
+{% endblock %}
