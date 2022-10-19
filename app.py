@@ -1,5 +1,5 @@
 """Flask app for Cupcakes"""
-from flask import Flask, redirect, jsonify, request
+from flask import Flask, jsonify, request, render_template
 from flask_debugtoolbar import DebugToolbarExtension
 from models import connect_db, Cupcake, db
 
@@ -12,6 +12,12 @@ toolbar = DebugToolbarExtension(app)
 
 connect_db(app)
 DEFAULT_IMG = "https://tinyurl.com/demo-cupcake"
+
+@app.route("/")
+def home():
+    """Display home page."""
+
+    return render_template("home.html",)
 
 @app.route("/api/cupcakes")
 def list_cupcakes():
